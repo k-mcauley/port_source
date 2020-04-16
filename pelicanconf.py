@@ -9,7 +9,14 @@ SITEURL = ''
 PATH = 'content'
 OUTPUT_PATH = '../output'
 PLUGIN_PATHS = ['plugins/', ]
-PLUGINS = ['i18n_subsites', ]
+PLUGINS = ['i18n_subsites', 'render_math', 'better_figures_and_images'] 
+MARKUP = ('md', 'ipynb')
+IGNORE_FILES = [".ipynb_checkpoints"]
+IPYNB_USE_METACELL = True
+# Setting for the better_figures_and_images plugin
+RESPONSIVE_IMAGES = True
+# Setting for the better_figures_and_images plugin
+FIGURE_NUMBERS = True
 
 JINJA_ENVIRONMENT = {
     'extensions': ['jinja2.ext.i18n'],
@@ -35,6 +42,7 @@ CATEGORY_SAVE_AS = 'category/{slug}/index.html'
 TAG_URL = 'tag/{slug}'
 TAG_SAVE_AS = 'tag/{slug}/index.html'
 
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -43,11 +51,11 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Ars Technica', 'https://arstechnica.com/'),
-     ('Wikipedia', 'https://wikipedia.org'),)
+LINKS = (('AAPM', 'https://aapm.org'),
+     ('IAPM', 'https://iapm.ie/'),)
 
-SOCIAL = (('Twitter', 'https://twitter.com/mbdevaney'),
-         ('Github', 'https://github.com/yourekittenme'),)
+SOCIAL = (('Linkedin', 'https://linkedin.com/in/kieran-mcauley'),
+         ('Github', 'https://github.com/k-mcauley'),)
 
 DEFAULT_PAGINATION = False
 
