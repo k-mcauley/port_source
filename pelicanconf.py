@@ -3,13 +3,23 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Kieran McAuley'
-SITENAME = 'Trainee Projects'
+SITENAME = 'Kieran\'s website'
 SITEURL = ''
 
 PATH = 'content'
 OUTPUT_PATH = '../output'
 PLUGIN_PATHS = ['plugins/', ]
-PLUGINS = ['i18n_subsites', 'render_math', 'better_figures_and_images'] 
+PLUGINS = ['i18n_subsites', 
+    'render_math', 
+    'better_figures_and_images',
+    'series',
+    'tag_cloud',
+    'liquid_tags.youtube',
+    'liquid_tags.notebook',
+    'liquid_tags.include_code',
+    'render_math',
+    'tipue_search',
+    'pelican-ipynb.markup'] 
 MARKUP = ('md', 'ipynb')
 IGNORE_FILES = [".ipynb_checkpoints"]
 IPYNB_USE_METACELL = True
@@ -42,6 +52,8 @@ CATEGORY_SAVE_AS = 'category/{slug}/index.html'
 TAG_URL = 'tag/{slug}'
 TAG_SAVE_AS = 'tag/{slug}/index.html'
 
+# for Tique Search Plugin
+DIRECT_TEMPLATES = ('index','tags', 'categories', 'authors', 'archives', 'search')
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
