@@ -2,7 +2,7 @@ Title: Data Analysis with pandas
 Author: Kieran McAuley
 Date: 2020-04-14
 Category: blogging
-Tags: pandas, data analysis, python
+Tags: pandas, data analysis, python, annotation
 
 # ``Introduction to Data Analysis with pandas``
 To become familiarised with the **pandas library** for use in analysis of data I undertook this small project. As most data seen clinically from previous reports and new dose monitoring software will collate data in a *.csv* or *.dat* file, I examined methods of pulling this data to python utilising pandas. 
