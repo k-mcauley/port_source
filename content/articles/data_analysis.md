@@ -90,6 +90,6 @@ This considerable block of code produced the annotated figure displayed below:
 
 The above data all appear to show a local increase of the average temperatures by year and decade. This would be expected, as we know there is a global increase in the average temperatures observed worldwide.
 
-The use of python in selection and manipulation in this data analysis was quite simple and removed the need for manual manipulation of data compared to another available software. Although the *annotation module* commonly used to annotate figures can be difficult to implement and may produce large blocks of code, the results are markedly better than what can be achivived in programs such as **Excel**. 
+The use of python in selection and manipulation in this data analysis was quite simple and removed the need for manual manipulation of data compared to another available software. Although the *annotation module* commonly used to annotate figures can be difficult to implement and may produce large blocks of code, the results are markedly better than what can be achieved in programs such as **Excel**. 
 
 Future work to improve this analysis should examine areas such as error analysis with python and further annotation examples. 

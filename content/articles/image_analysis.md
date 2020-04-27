@@ -5,12 +5,12 @@ Category: blogging
 Tags: sckit-image, scipy, image analysis, python
 
 # ``Image Analysis using scipy and scikit-image``
-In this post, I examine the the use of scipy and scikit-image for use in image analysis with a focus on its application to scientific data. 
+In this post, I examine the use of scipy and scikit-image for use in image analysis with a focus on its application to scientific data. 
 
 ## Images as numpy arrays
 Images are represented in ``scikit-image`` using standard ``numpy`` arrays. This allows maximum inter-operability with other python libraries such as, ``matplotlib`` and ``scipy``.
 
-A standard color image is a 3D array, where the last dimension has a size of 3 and contains information on the images red, grenn and blue channels (RGB). The following exmaple uses a sample image from the sckit-image module to demonstrate the attributes of an image array.
+A standard color image is just a 3D array, where the last dimension has a size of 3 and contains information on the images red, green and blue channels (RGB). The following example uses a sample image from the sckit-image module to demonstrate the attributes of an image array.
 
       :::python3
      # loading standard libraries
@@ -27,15 +27,17 @@ A standard color image is a 3D array, where the last dimension has a size of 3 a
      # in python we can manipulate the values of the image arrays
      # here a square portion is defined using the row and column co-ordinates of the image
      # and the channel data is replaced with the darkest red shade available 
-     # while setting the green and bluw values to zero
+     # while setting the green and blue values to zero
      cat[10:110, 10:110, :] = [255, 0, 0]  # [red, green, blue]
      # show the image array
      plt.imshow(cat);
 
 The output of this code describes:
 
-The **shape** of the 3D array, we can inspect the number of rows and columns, as well as the number of color channels. Some image formats can contain additional channel filter data i.e infrared, etc. producing greater values.
-Shape: (300, 451, 3)
+The **shape** of the 3D array  
+we can inspect the number of rows and columns, as well as the number of color channels. Some image formats can contain additional channel filter data i.e. infrared, etc.  
+
+**Shape: (300, 451, 3)**
 
 There exist different conventions for representing image values, the most common are:
 
@@ -45,19 +47,20 @@ _uint8_: where  0 is black, 1 is white (0-1)
 
 Scipy allows any data-type as input, as long as the range is correct (**0-1** for floating point images, **0-255** for unsigned bytes, **0-65535** for unsigned 16-bit integers).
 
-The __range__ of values contained in this image were found to be: 
-Values min/max: 0, 231
-It is clear this image was imput as an float64 data type,this could be easily converted if required.
+The __range__ of values contained in this image were found to be:  
 
-The resulting plot is displyed below:  
+**Values min/max: (0, 231)**
+
+It is clear this image was input as an float64 data type,this could be easily converted if required.
+
+The resulting plot is displayed below:  
 
 ![cat]({static}/img/cat.png)  
   
 
 ## Separation of color channels
 ---
-Using another sample image the separation of color can be performed quite simply, this may be useful in assessing the different channels of irraiated film using a pyton code.
-
+Using another sample image the separation of color data can be performed quite simply, this may be useful in assessing the different channels of irradiated film using python.
 
     :::python3
      image = plt.imread('../images/Bells-Beach.jpg')
@@ -100,7 +103,8 @@ The lighter the areas in the individual images represent areas with the highest 
 
 ## Segmentation of images 
 ---
-Segmentation deals with separating the image into regions of interest. 
+Segmentation deals with separating the image into regions of interest.  
+
 Segmentation contains two major sub-fields:
 
 *Supervised segmentation*: Some prior knowledge, possibly from human input, is used to guide the algorithm.
@@ -138,17 +142,17 @@ The values of the array can be unraveled to generate a histogram of the individu
 
 ![histogram]({static}/img/hist.png)  
 
-Using supervised segmentation, we could set a cut-off value. This would require trial and error, therefore, a supervised method can be more benficial. In this case the sauvola filter was applied which attempts to set an ideal threshold for every pixel.  
+Using supervised segmentation, we could set a cut-off value. This would require trial and error, therefore, a supervised method can be more beneficial. In this case the sauvola filter was applied which attempts to set an ideal threshold for every pixel.  
 
 After examining multiple cut-off values the best supervised thresholding set at 100 produced the following figure:  
 
 ![supervised]({static}/img/supervised.png)  
 
-Clearly there is room for improvement. By using the sauvola filter in sckit-image pakage, the following image was obtained.  
+Clearly there is room for improvement. By using the sauvola filter in sckit-image package, the following image was obtained.  
 
 ![unsupervised]({static}/img/unsupervised.png)  
 
-The choice of an appropriate filter had a substantial impact on the information retained in this image in comparision to the supervised method.
+The choice of an appropriate filter had a substantial impact on the information retained in this image in comparison to the supervised method.
 
 ## Conclusions  
 ---  
